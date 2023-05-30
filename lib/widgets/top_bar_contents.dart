@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gymha/authentication/login_screen.dart';
+import 'package:gymha/authentication/login_page.dart';
+
+import 'package:gymha/authentication/signup_page.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -37,7 +39,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(width: screenSize.width/7),
+                    SizedBox(width: screenSize.width/21),
                     Text(
                       'GYMHA ',
                       style: TextStyle(
@@ -49,83 +51,8 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ),
                     ),
 
-                    // SizedBox(width: screenSize.width / 15),
-                    // InkWell(
-                    //   onHover: (value) {
-                    //     setState(() {
-                    //       value
-                    //           ? _isHovering[1] = true
-                    //           : _isHovering[1] = false;
-                    //     });
-                    //   },
-                    //   onTap: () {},
-                    //   child: Column(
-                    //     mainAxisSize: MainAxisSize.min,
-                    //     children: [
-                    //       Text(
-                    //         'About Us',
-                    //         style: TextStyle(
-                    //             color: _isHovering[1]
-                    //                 ? Color(0xFF077bd7)
-                    //                 : Color(0xFF077bd7),
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 16
-                    //         ),
-                    //       ),
-                    //       SizedBox(height: 5),
-                    //       Visibility(
-                    //         maintainAnimation: true,
-                    //         maintainState: true,
-                    //         maintainSize: true,
-                    //         visible: _isHovering[1],
-                    //         child: Container(
-                    //           height: 2,
-                    //           width: 20,
-                    //           color: Color(0xFF051441),
-                    //         ),
-                    //       )
-                    //     ],
-                    //   ),
-                    // ),
-                    // SizedBox(width: screenSize.width / 15),
-                    // InkWell(
-                    //   onHover: (value) {
-                    //     setState(() {
-                    //       value
-                    //           ? _isHovering[2] = true
-                    //           : _isHovering[2] = false;
-                    //     });
-                    //   },
-                    //   onTap: () {},
-                    //   child: Column(
-                    //     mainAxisSize: MainAxisSize.min,
-                    //     children: [
-                    //       Text(
-                    //         'Courses',
-                    //         style: TextStyle(
-                    //             color: _isHovering[2]
-                    //                 ? Color(0xFF077bd7)
-                    //                 : Color(0xFF077bd7),
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 16
-                    //         ),
-                    //       ),
-                    //       SizedBox(height: 5),
-                    //       Visibility(
-                    //         maintainAnimation: true,
-                    //         maintainState: true,
-                    //         maintainSize: true,
-                    //         visible: _isHovering[2],
-                    //         child: Container(
-                    //           height: 2,
-                    //           width: 20,
-                    //           color: Color(0xFF051441),
-                    //         ),
-                    //       )
-                    //     ],
-                    //   ),
-                    // ),
                     SizedBox(width: screenSize.width / 2),
+                    SizedBox(width: screenSize.width / 7),
                     InkWell(
                       onHover: (value) {
                         setState(() {
@@ -139,10 +66,11 @@ class _TopBarContentsState extends State<TopBarContents> {
                             context,
                             MaterialPageRoute(
                             builder: (context) =>
-                            LoginScreen()));
+                                LoginPage()));
                       },
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
+                        // crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             'Login',
@@ -178,8 +106,11 @@ class _TopBarContentsState extends State<TopBarContents> {
                               : _isHovering[3] = false;
                         });
                       },
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context) =>SignUpPage()));
+                      },
                       child: Column(
+                        // crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(

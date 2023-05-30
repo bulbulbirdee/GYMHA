@@ -1,21 +1,37 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gymha/controllers/MenuController.dart';
+import 'package:gymha/widgets/dashboard.dart';
+import 'package:gymha/widgets/side_menu.dart';
+import 'package:provider/provider.dart';
 
-class UserPage extends StatefulWidget {
-  const UserPage({Key? key}) : super(key: key);
+class UserPage extends StatelessWidget {
 
-  @override
-  State<UserPage> createState() => _UserPageState();
-}
-
-class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("User Page"),
-      ),
+      key: context.read<MenuController>().scaffoldKey,
+      drawer: SideMenu(),
+      body: Container(
+        color: Color(0xFFff02fd),
+        child: SafeArea(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (MediaQuery.of(context).size.width > 1200)
+            const Expanded(
+                  child: SideMenu()
+              ),
+              const Expanded(
+                flex: 5,
+                  child: DashboardScreen(),
+              ),
+            ],
+          )
+        ),
+      )
     );
   }
 }
+
+
+

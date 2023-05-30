@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gymha/screens/user_side_screens/newsletter_screen.dart';
+import 'package:gymha/screens/user_side_screens/user_gallery.dart';
 import 'package:gymha/widgets/responsive.dart';
 
 class FloatingQuickAccessBar extends StatefulWidget {
@@ -18,12 +20,12 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
   List _isHovering = [false, false, false, false];
   List<Widget> rowElements = [];
 
-  List<String> items = ['Home', 'About Us', 'Courses'];
+  List<String> items = ['About Us', 'Donate', 'Gallery', 'Newsletter'];
   List<IconData> icons = [
-    Icons.location_on,
-    Icons.date_range,
-    Icons.people,
-    Icons.wb_sunny
+    Icons.dashboard,
+    Icons.assistant,
+    Icons.browse_gallery,
+    Icons.contact_support_rounded
   ];
 
 
@@ -39,11 +41,27 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
             value ? _isHovering[i] = true : _isHovering[i] = false;
           });
         },
-        onTap: () {},
+        onTap: () {
+          if(i == 2){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const UserGallery()),
+                );
+              //  print("In the gallery");
+              }
+              else if(i == 3){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NewsletterScreen()),
+                );
+              //  print("In the Newsletter");
+              }
+            },
+
         child: Text(
           items[i],
           style: TextStyle(
-            color: _isHovering[i] ? Colors.blueGrey[900] : Colors.blueGrey,
+            color: _isHovering[i] ? Colors.black87 : Colors.white,
           ),
         ),
       );
@@ -84,7 +102,8 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
             Padding(
               padding: EdgeInsets.only(bottom: widget.screenSize.height/40 ),
               child: Card(
-                elevation: 4,
+               // elevation: 4,
+                color: Color(0x40c700c9),
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: widget.screenSize.height/45,
@@ -94,7 +113,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                   child: Row(
                     children:[
                       Icon(icons[i],
-                      color: Colors.blueGrey),
+                      color: Colors.white),
                       SizedBox(width: widget.screenSize.width/50,),
                       InkWell(
                         splashColor: Colors.transparent,
@@ -104,11 +123,27 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                             value ? _isHovering[i] = true : _isHovering[i] = false;
                           });
                         },
-                        onTap: () {},
+                        onTap: () {
+
+                           if(i == 2){
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => const UserGallery()),
+                                        );
+                                      //  print("In the gallery");
+                                      }
+                                      else if(i == 3){
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => const NewsletterScreen()),
+                                        );
+                                      //  print("In the Newsletter");
+                                      }
+                                    },
                         child: Text(
                           items[i],
                           style: TextStyle(
-                            color: _isHovering[i] ? Colors.blueGrey[900] : Colors.blueGrey,
+                            color: _isHovering[i] ? Colors.black87 : Colors.white,
                           ),
                         ),
                       ),
@@ -123,7 +158,8 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
 
           )
         :Card(
-          elevation: 5,
+          //elevation: 5,
+          color: Color(0x33c700c9),
           child: Padding(
             padding: EdgeInsets.only(
               top: widget.screenSize.height/50,

@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       //extendBodyBehindAppBar: true,
-      appBar: screenSize.width<800?AppBar(
+      appBar: screenSize.width<1100?AppBar(
         backgroundColor: Colors.white.withOpacity(_opacity),
         iconTheme: IconThemeData(color: Color(0xFFc700c9)),
         elevation: 0,

@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:gymha/authentication/login_screen.dart';
+import 'package:gymha/authentication/login_page.dart';
+
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
     Key? key,
   }) : super(key: key);
 
+  static const Color gradientStartColor = Color(0xff11998e);
+  static const Color gradientEndColor = Color(0xFFc700c9);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xff7b09eb),
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  gradientStartColor,
+                  gradientEndColor
+                ],
+                begin: const FractionalOffset(0.2, 0.2),
+                end: const FractionalOffset(1.0, 1.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp)
+        ),
+       // color: Color(0xff7b09eb),
         child: Padding(
 
           padding: const EdgeInsets.all(16.0),
@@ -26,7 +41,7 @@ class MenuDrawer extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                LoginScreen()));
+                                LoginPage()));
                   },
                   child: Text(
                     'Login',
@@ -54,27 +69,27 @@ class MenuDrawer extends StatelessWidget {
                     thickness: 2,
                   ),
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'Read',
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                  child: Divider(
-                    color: Colors.white,
-                    thickness: 2,
-                  ),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'Contact Us',
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () {},
+                //   child: Text(
+                //     'Read',
+                //     style: TextStyle(color: Colors.white, fontSize: 22),
+                //   ),
+                // ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                //   child: Divider(
+                //     color: Colors.white,
+                //     thickness: 2,
+                //   ),
+                // ),
+                // InkWell(
+                //   onTap: () {},
+                //   child: Text(
+                //     'Contact Us',
+                //     style: TextStyle(color: Colors.white, fontSize: 22),
+                //   ),
+                // ),
                 Expanded(
                   child: Align(
                     alignment: Alignment.bottomCenter,

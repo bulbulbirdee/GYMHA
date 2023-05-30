@@ -25,19 +25,19 @@ class FeaturedHeading extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Featured Courses',
+                'GYMHA Courses',
                 style: TextStyle(
                     fontSize: 36,
-                    fontFamily: 'Raleway',
+                    fontFamily: 'Cinzel',
                     fontWeight: FontWeight.bold,
-                    color:Color(0xFF263b5e)
+                    color:Color(0xFF5560a4)
                 ),
               ),
               SizedBox(height: 5,),
-              Text(
-                'Popular This Month',
-                textAlign: TextAlign.end,
-              )
+              // Text(
+              //   'Popular This Month',
+              //   textAlign: TextAlign.end,
+              // )
             ],
 
           ),
@@ -51,20 +51,20 @@ class FeaturedHeading extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            'Featured Courses',
+            'GYMHA Courses',
             style: TextStyle(
                 fontSize: 36,
-                fontFamily: 'Raleway',
+                fontFamily: 'Cinzel',
                 fontWeight: FontWeight.bold,
-                color:Color(0xFF263b5e)
+                color:Color(0xFF5560a4)
             ),
           ),
-          Expanded(
-            child: Text(
-              'Popular This Month',
-              textAlign: TextAlign.end,
-            ),
-          ),
+          // Expanded(
+          //   child: Text(
+          //     'Popular This Month',
+          //     textAlign: TextAlign.end,
+          //   ),
+          // ),
         ],
       ),
     );

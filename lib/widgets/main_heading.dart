@@ -22,8 +22,9 @@ class MainHeading extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 40,
-          fontFamily: 'Montserrat',
+          fontFamily: 'Cinzel',
           fontWeight: FontWeight.bold,
+            color:Color(0xFF5560a4)
         ),
       ),
     );
