@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:gymha/arguments/course_argument.dart';
 import 'package:gymha/main.dart';
 import 'package:gymha/model/course.dart';
+import 'package:gymha/screens/details/course_details.dart';
 
 class CourseItem extends StatelessWidget {
-  CourseItem({Key? key, this.snap}) : super(key: key);
+  CourseItem({Key? key, this.snap, this.courseID}) : super(key: key);
 
   final snap;
-  String? downloadURL;
-
+  final courseID;
 
 
   @override
@@ -31,6 +31,11 @@ class CourseItem extends StatelessWidget {
               // Details of course page
               // Navigator.pushNamed(context, MyApp.courseDetails,
               // arguments: CourseArgument(course));
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CourseDetails(snap: snap, courseID: courseID,)),
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,6 +68,7 @@ class CourseItem extends StatelessWidget {
                               Text('${snap["duration"]} Weeks', style: TextStyle(fontSize: 15),)
                             ],
                           ),
+                         // Text(courseID),
                           Text('\$${snap["price"]}', style: TextStyle(fontSize: 15, color: Colors.blueGrey, fontWeight: FontWeight.bold),)
                         ],
                       )

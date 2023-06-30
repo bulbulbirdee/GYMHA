@@ -3,42 +3,34 @@ import 'package:flutter/material.dart';
 import 'package:gymha/widgets/course_widgets/lesson_panel.dart';
 
 class LessonView extends StatelessWidget {
-  const LessonView({Key? key}) : super(key: key);
+   LessonView({Key? key, this.courseID, this.sectionID, this.lessonID}) : super(key: key);
+
+  final courseID;
+  final sectionID;
+  final lessonID;
 
   @override
   Widget build(BuildContext context) {
-
-    late Stream<QuerySnapshot> _streamLesson;
-
     return Scaffold(
-      body: StreamBuilder(
-          stream: FirebaseFirestore.instance
-              .collection('Courses')
-              .doc("dLKhmoJxKlFBcVCEH8vK")
-              .collection('Sections')
-              .doc("N6AZN8WdXcqeLcF0eCw2")
-              .collection('Lessons').snapshots(),
-          builder: (context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot)
-          {
-            if(snapshot.connectionState == ConnectionState.waiting){
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
+      body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        stream: FirebaseFirestore.instance
+            .collection('Courses')
+            .doc(courseID)
+            .collection('Sections')
+            .doc(sectionID)
+            .collection('Lessons').doc(lessonID).snapshots(),
+        builder: (_, snapshot) {
+          if (snapshot.hasError) return Text('Error = ${snapshot.error}');
 
-            return
-              // ListView.builder(
-              // scrollDirection: Axis.vertical,
-              // shrinkWrap: true,
-              // itemCount: snapshot.data!.docs.length,
-              // itemBuilder: (context, index) =>
-                  LessonPanel(
-                snap: snapshot.data!.docs[0].data(),
-              );
-          //  );
-
+          if (snapshot.hasData) {
+            print("Im here");
+            return LessonPanel(snap: snapshot.data!.data());
           }
+
+          return Center(child: CircularProgressIndicator());
+        },
       )
-    );
+
+      );
   }
 }

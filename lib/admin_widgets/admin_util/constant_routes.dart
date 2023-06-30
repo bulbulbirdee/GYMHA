@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:gymha/screens/user_side_screens/user_gallery.dart';
 
 const String adminNewsletter = '/adminNewsletter';
+const String adminCourses = '/adminCourses';
 const String adminCounseling = '/adminCounseling';
 const String adminEditUsers = '/adminEditUsers';
 const String adminViewUsers = '/adminViewUsers';

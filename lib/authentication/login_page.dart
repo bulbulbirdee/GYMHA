@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:gymha/admin_widgets/admin_dashboard.dart';
 import 'package:gymha/authentication/forgot_password/forgot_password_mail.dart';
 import 'package:gymha/authentication/forgot_password/forgot_password_phone.dart';
 import 'package:gymha/authentication/gradient_button.dart';
@@ -91,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) =>  AdminPage(),
+              builder: (context) =>  AdminDashboard(),
             ),
           );
         }else{

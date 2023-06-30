@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gymha/admin_widgets/admin_dashboard_components/anime_holder.dart';
 import 'package:gymha/admin_widgets/admin_dashboard_components/top_info_card.dart';
@@ -10,6 +11,9 @@ class AppInfoBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Future<AggregateQuerySnapshot> count = FirebaseFirestore.instance.collection("Users").count().get();
+    int docCount = 0;
     return Expanded(
         flex: 7,
         child: SingleChildScrollView(
@@ -20,9 +24,27 @@ class AppInfoBanner extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    top_info_card(fig: 2048, title: "USERS",),
-                    top_info_card(fig: 74, title: "NEWSLETTERS"),
-                    top_info_card(fig: 43, title: "COUNSELLING REQUESTS")
+                    // Center(
+                    //   child:
+                      FutureBuilder<AggregateQuerySnapshot>(
+                        future: count,
+                        builder: (context, snapshot){
+                          if(snapshot.hasError){
+                            print("Error");
+                          }
+                          if(snapshot.hasData){
+                            docCount = snapshot.data!.count;
+                            top_info_card(fig: docCount, title: "USERS",);
+                            top_info_card(fig: 74, title: "NEWSLETTERS");
+                            top_info_card(fig: 43, title: "COUNSELLING REQUESTS");
+                            print(docCount);
+                          }
+                          return CircularProgressIndicator();
+                          }),
+
+                  //  top_info_card(fig: DashboardInfo(), title: "USERS",),
+                  //   top_info_card(fig: 74, title: "NEWSLETTERS"),
+                  //   top_info_card(fig: 43, title: "COUNSELLING REQUESTS")
                   ],
                 )
               ],
@@ -38,4 +60,26 @@ class AppInfoBanner extends StatelessWidget {
         )
     );
   }
+
+ //  int DashboardInfo(){
+ //
+ //    Future<AggregateQuerySnapshot> count = FirebaseFirestore.instance.collection("Users").count().get();
+ //    int docCount = 0;
+ //
+ //    return FutureBuilder<AggregateQuerySnapshot>(
+ //      future: count,
+ //      builder: (context, snapshot){
+ //        if(snapshot.hasError){
+ //          print("Error");
+ //        }
+ //        if(snapshot.connectionState == ConnectionState.done){
+ //          docCount = snapshot.data!.count;
+ //          print(docCount);
+ //        }
+ //        return CircularProgressIndicator();
+ //
+ //      },
+ //    );
+ // //   return docCount;
+ //  }
 }

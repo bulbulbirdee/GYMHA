@@ -39,13 +39,13 @@ class Course {
 
   // bool get _isFavorite => isFavorite;
   //
-  // set _isFavorite(bool value) {
+  // set _isFavorite(bool value)  async {
   //   isFavorite = value;
 
 
-  toJson(){
+  toJson() {
     return{
-    // "id" : id,
+      "id" : id,
       "courseID" : courseID,
       "title" : title,
       "thumbnailUrl" : thumbnailUrl,

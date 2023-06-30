@@ -18,7 +18,7 @@ class AdminCourseRepository extends GetxController{
     ).then((value)
     {
       String docid = value.id;
-      print(docid) ;
+     // print(docid) ;
      // return docid;
     })
         .catchError((error, stackTrace){

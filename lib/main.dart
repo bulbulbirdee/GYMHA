@@ -95,11 +95,11 @@ class MyApp extends StatelessWidget {
 
 
       onGenerateRoute: (settings) {
-        if (settings.name == courseDetails) {
-          final args = settings.arguments as CourseArgument;
-          return MaterialPageRoute(
-              builder: (context) => CourseDetails(course: args.course));
-        }
+        // if (settings.name == courseDetails) {
+        //   final args = settings.arguments as CourseArgument;
+        //   return MaterialPageRoute(
+        //       builder: (context) => CourseDetails(course: args.course));
+        // }
         if (settings.name == homePage) {
           return MaterialPageRoute(
               builder: (context) => HomePage());
@@ -124,6 +124,11 @@ class MyApp extends StatelessWidget {
           return MaterialPageRoute(
               builder: (context) => AdminViewUsers());
         }
+        if (settings.name == adminCourses) {
+          // final args = settings.arguments as CourseArgument;
+          return MaterialPageRoute(
+              builder: (context) => AdminCourses());
+        }
 
 
         if (settings.name == adminGallery) {
@@ -146,6 +151,7 @@ class MyApp extends StatelessWidget {
       //   child: LoginPage()
 
       home:
+
       //LessonView()
       //CourseListPage()
       //AdminCourseSection()
@@ -170,7 +176,7 @@ class MyApp extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  AdminPage(),
+                        builder: (context) =>  AdminDashboard(),
                       ),
                     );
                   }else{

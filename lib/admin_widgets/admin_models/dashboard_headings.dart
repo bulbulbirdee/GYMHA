@@ -15,7 +15,7 @@ List<DashboardHeadings> UserRedirects = [
   ];
 
 List<DashboardHeadings> CourseRedirects = [
-  DashboardHeadings(Heading: "Create New Courses", onTap: adminViewUsers),
+  DashboardHeadings(Heading: "Create New Courses", onTap: adminCourses),
   DashboardHeadings(Heading: "Edit/Delete Courses", onTap: adminEditUsers),
 ];
 

@@ -59,7 +59,7 @@ class FeaturedCourses extends StatelessWidget {
                     children: List.generate(snapshot.data!.docs.length, (index)
                     {
                       return CourseItem(
-                              snap: snapshot.data!.docs[index].data(),
+                              snap: snapshot.data!.docs[index].data(), courseID: snapshot.data!.docs[index].reference.id.toString(),
                             );
                     },
                     ),
