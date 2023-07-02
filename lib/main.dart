@@ -18,13 +18,13 @@ import 'package:gymha/admin_widgets/admin_gallery.dart';
 import 'package:gymha/admin_widgets/admin_newsletter.dart';
 import 'package:gymha/admin_widgets/admin_view_users.dart';
 import 'package:gymha/admin_widgets/admin_util/constant_routes.dart';
-import 'package:gymha/arguments/course_argument.dart';
+
 import 'package:gymha/authentication/forgot_password/otp_screen.dart';
 import 'package:gymha/authentication/login_page.dart';
 
 import 'package:gymha/authentication/signup_page.dart';
 import 'package:gymha/controllers/MenuController.dart';
-import 'package:gymha/screens/admin_page.dart';
+
 import 'package:gymha/screens/details/course_details.dart';
 
 import 'package:gymha/screens/home_page.dart';

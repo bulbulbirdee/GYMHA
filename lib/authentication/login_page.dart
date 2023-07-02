@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:gymha/controllers/MenuController.dart';
 import 'package:gymha/controllers/sign_up_controller.dart';
 import 'package:gymha/model/user_model.dart';
-import 'package:gymha/screens/admin_page.dart';
+
 import 'package:gymha/screens/home_page.dart';
 import 'package:gymha/screens/user_page.dart';
 import 'package:gymha/services/auth_method.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gymha/arguments/course_argument.dart';
+
 import 'package:gymha/main.dart';
 import 'package:gymha/model/course.dart';
 import 'package:gymha/screens/details/course_details.dart';
