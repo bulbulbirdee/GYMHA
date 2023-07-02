@@ -3,9 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gymha/controllers/MenuController.dart';
-import 'package:gymha/data_provider/cart_data_provider.dart';
+
 import 'package:gymha/model/course.dart';
-import 'package:gymha/model/section.dart';
+
 import 'package:gymha/screens/details/details_widget/favorite_option.dart';
 import 'package:gymha/screens/home_page.dart';
 import 'package:gymha/screens/user_page.dart';

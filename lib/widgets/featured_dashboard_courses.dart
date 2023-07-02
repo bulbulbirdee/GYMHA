@@ -3,7 +3,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:gymha/data_provider/course_data_provider.dart';
+
 import 'package:gymha/model/course.dart';
 import 'package:gymha/widgets/course_item.dart';
 

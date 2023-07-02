@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:gymha/model/course_category.dart';
-import 'package:gymha/model/section.dart';
 
 class Course {
   final String? id;

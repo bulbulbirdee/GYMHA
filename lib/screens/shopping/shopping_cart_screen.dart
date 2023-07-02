@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gymha/data_provider/cart_data_provider.dart';
+
 import 'package:gymha/widgets/top_bar_contents.dart';
 
 class ShoppingCartScreen extends StatefulWidget {
